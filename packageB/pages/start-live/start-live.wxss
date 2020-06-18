@@ -1,0 +1,137 @@
+@import '../apply-live/apply-live.wxss';
+
+.live-time {
+  margin-top: 10rpx;
+}
+
+.room-info {
+  min-height: 300rpx;
+}
+
+.room-info .row-item .ops-wrap {
+  display: flex;
+  align-items: center;
+  margin-left: 8rpx;
+}
+
+.room-info .row-item.type {
+  margin-top: 42rpx;
+}
+
+.room-info .row-item .ops-wrap .ops-item {
+  width: 164rpx;
+  height: 46rpx;
+  margin-right: 19rpx;
+  color: #fff;
+  font-size: 24rpx;
+  background: #f9b483;
+  border-radius: 23rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.room-info .row-item .ops-wrap .ops-item.extra {
+  color: #FC7B73;
+  background: #fff;
+}
+
+.room-info .row-item .scroll-view-H {
+  flex: 1;
+}
+
+.room-info .row-item .scroll-view-H .scroll-item {
+  display: inline-block;
+  margin-right: 20rpx;
+  font-size: 28rpx;
+}
+
+.room-info .row-item .scroll-view-H .scroll-item checkbox {
+  margin-right: 10rpx;
+  transform: scale(0.7);
+}
+
+.room-info .row-item .scroll-view-H .scroll-item checkbox .wx-checkbox-input.wx-checkbox-input-checked {
+  background-color: #f8b303 !important;
+  border-color: #f8b303 !important;
+}
+
+.room-info .row-item .title {
+  margin-right: 10rpx;
+  font-weight: 500;
+  color: #fff;
+}
+
+.room-info .row-item .input-wrap {
+  padding-bottom: 10rpx;
+  border-bottom: 1rpx solid #ddd;
+  flex: 1;
+}
+
+.room-info .row-item:nth-child(2) {
+  margin-top: 40rpx;
+  align-items: flex-start;
+}
+
+.btn {
+  height: 88rpx;
+  line-height: 88rpx;
+  border-radius: 44rpx;
+  text-align: center;
+  color: #fff;
+  letter-spacing: 4rpx;
+  font-size: 28rpx;
+  background: #f8b303;
+  padding: 0 42rpx;
+}
+
+.btn.poster {
+  background: #fab278;
+}
+
+.footer {
+  top: 70%;
+  left: 24rpx;
+  right: 24rpx;
+  display: flex;
+  position: absolute;
+  justify-content: space-around;
+}
+
+.notes {
+  position: absolute;
+  top: 83%;
+  left: 120rpx;
+  right: 60rpx;
+  display: flex;
+  flex-direction: column;
+  font-size: 24rpx;
+  color: red;
+}
+
+.notes .waring {
+  margin-bottom: 15rpx;
+}
+
+.notes .txt {
+  padding: 4rpx;
+}
+
+.start-live-btn {
+  width: 238rpx;
+  height: 80rpx;
+  border-radius: 40rpx;
+  text-align: center;
+  line-height: 80rpx;
+  font-size: 32rpx;
+  color: #fff;
+  position: absolute;
+  top: 74%;
+  left: 50%;
+  transform: translateX(-50%);
+  background:linear-gradient(90deg,rgba(255,126,105,0.99),rgba(255,181,141,0.99));
+}
+
+.holder-class {
+  
+}

@@ -1,0 +1,32 @@
+<cu-custom bgColor="common-base-bg" isBack="{{true}}">
+  <view slot="content" class="common-title-color">直播设置</view>
+</cu-custom>
+
+<view class="form-wrap" style="width: 588rpx; height: 580rpx;">
+  <view class="room-info">
+    <view class="row-item flex">
+      <view class="title">直播间标题:</view>
+      <view class="input-wrap">
+        <input bindinput="bingName" style="color: #fff;"></input>
+      </view>
+    </view>
+    <view class="row-item flex">
+      <view class="title">选择产品:</view>
+      <view class="ops-wrap">
+        <view class="ops-item extra" bindtap="tapOpts" data-index="1">
+          <image src="/images/add.png" style="width:19rpx;height:19rpx" wx:if='{{ !ids }}'></image>
+          <text>{{ !ids ? '选择' : '已选择' }}</text>
+        </view>
+      </view>
+    </view>
+    <view class="row-item flex" style="align-items:center;margin-top: 58rpx">
+      <view class="title">直播间封面:</view>
+      <view class="cover-wrap" bindtap="uploadImg">
+        <image wx:if="{{ !cover }}" src='/packageB/imgs/upload.png' style="width:75rpx;height:50rpx;"></image>
+        <image wx:if="{{ cover }}" src="{{ cover }}" style="width:160rpx;height:240rpx;border-radius:15rpx;"></image>
+      </view>
+    </view>
+  </view>
+</view>
+
+<button class="start-live-btn" bindtap="startTap">开始直播</button>

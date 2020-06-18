@@ -1,0 +1,25 @@
+<cu-custom bgColor="common-base-bg" isBack="{{true}}">
+  <view slot="content" class="common-title-color">{{ title || '申请入驻' }}</view>
+</cu-custom>
+
+
+<view class="form-wrap">
+  <view class="inner">
+    <view class="input-item">
+      <input class="cell-input" bindblur="bindPhoneBlur" bindinput="bindPhone" type="tel" maxlength="11" placeholder="手机号" placeholder-class="holder-class"></input>
+    </view>
+    <view class="input-item">
+      <input class="code-input" bindinput="bindCode" maxlength="6" type="number" placeholder-class="holder-class" placeholder="验证码"></input>
+      <button class="get-code {{ btnDisabled ? 'disabled' : ''}}" disabled="{{ btnDisabled }}" bindtap="tapGetCode">{{ btnValue }}</button>
+    </view>
+  </view>
+  <view class="cost">
+    <text class="txt">入驻费用：</text>
+    <text class="price">{{ fee || '0.00' }}元/年</text>
+  </view>
+  <text class="note">
+     {{ notes || '暂无说明！' }}
+  </text>
+</view>
+
+<view class="btn" bindtap="handleSubmit">付费提交申请</view>

@@ -1,0 +1,53 @@
+<cu-custom bgColor="common-base-bg" isBack="{{true}}">
+  <view slot="content" class="common-title-color">主播入口</view>
+</cu-custom>
+
+<view class="slicer"></view>
+
+<view class="part-item">
+  <view class="title flex">
+    <view class="bundle"></view>
+    <text>订单统计</text>
+  </view>
+  <view class="content-wrap flex">
+    <view class="item">
+      <view class="sub">今日佣金总额：
+        <text class="">{{ info.today_order_count || 0}}</text>
+      </view>
+      <view class="sub">今日订单总额：
+        <text class="">{{ info.thismonth_order_count || 0}}</text>
+      </view>
+    </view>
+    <view class="item">
+      <view class="sub">本月佣金总额：
+        <text class="">{{ info.today_order_price || 0}}</text>
+      </view>
+      <view class="sub">本月订单总额：
+        <text class="">{{ info.thismonth_order_price || 0}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="slicer slicer2"></view>
+
+<view class="part-item">
+  <view class="title flex">
+    <view class="bundle"></view>
+    <text>主播设置</text>
+  </view>
+  <view class="ops-wrap flex">
+    <navigator url="/packageB/pages/start-live/start-live" hover-class="none">
+      <view class="ops-item">
+        <image src="/packageB/imgs/start.png" style="width:114rpx;height:114rpx;" class="start"></image>
+        <view class="txt">开启直播</view>
+      </view>
+    </navigator>
+    <navigator url="/packageB/pages/create-poster/index?number={{ info.number }}" hover-class="none">
+      <view class="ops-item">
+        <image src="/packageB/imgs/poster.png" style="width:114rpx;height:114rpx;"></image>
+        <view class="txt">生成海报</view>
+      </view>
+    </navigator>
+  </view>
+</view>
