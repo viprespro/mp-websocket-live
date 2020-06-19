@@ -11,19 +11,19 @@
   </view>
   <view class="content-wrap flex">
     <view class="item">
-      <view class="sub">今日佣金总额：
+      <view class="sub">今日订单数量：
         <text class="">{{ info.today_order_count || 0}}</text>
       </view>
       <view class="sub">今日订单总额：
-        <text class="">{{ info.thismonth_order_count || 0}}</text>
+        <text class="">{{ info.today_order_price || 0}}</text>
       </view>
     </view>
     <view class="item">
-      <view class="sub">本月佣金总额：
-        <text class="">{{ info.today_order_price || 0}}</text>
+      <view class="sub">未返佣金总额：
+        <text class="">{{ info.uncommisson_price || 0}}</text>
       </view>
-      <view class="sub">本月订单总额：
-        <text class="">{{ info.thismonth_order_price || 0}}</text>
+      <view class="sub">已返佣金总额：
+        <text class="">{{ info.commisson_price || 0}}</text>
       </view>
     </view>
   </view>
