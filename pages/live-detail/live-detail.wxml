@@ -57,8 +57,8 @@
           <cover-view class="barrage-item">
             <cover-view class="item-wrap">
               <cover-image wx:if="{{ item.avatar }}" src="{{ item.avatar }}" class="avatar"></cover-image>
-              <cover-view class="item-nickname" style="color:{{ item.color }};">{{ item.nickname }}</cover-view>
-              <cover-view class="item-words" style="max-width: {{ windowW -150 }}px;">{{ item.words}}</cover-view>
+              <cover-view class="item-nickname" style="top:{{  platform == 'android' ? 2 : 0 }}px;color:{{ item.color }};vertical-align:{{ platform == 'android' ? 'bottom' : 'middle' }}">{{ item.nickname }}</cover-view>
+              <cover-view class="item-words" style="max-width: {{ windowW -150 }}px;vertical-align:{{ platform == 'android' ? 'bottom' : 'middle' }}">{{ item.words}}</cover-view>
             </cover-view>
           </cover-view>
         </block>
@@ -66,7 +66,7 @@
     </cover-view>
 
     <!-- footer -->
-    <cover-view class="footer">
+    <cover-view class="footer" wx:if="{{ !showInput }}">
       <cover-view class="item0" catchtap="showGoods">
         <cover-image src="/images/goods.png" class="goods"></cover-image>
         <!-- <cover-view class="txt">宝贝</cover-view> -->
@@ -109,7 +109,11 @@
   </cover-view>
 
   <!-- send barrage -->
-  <input cursor-spacing='0' wx:if='{{ showInput }}' focus="{{ focus }}" placeholder-class="holder-class" placeholder='说点什么吧...' bindblur="bindBlur" value="{{ inputVal }}" class="send-barrage" bindinput="bindInput"></input>
+   <input cursor-spacing='0' bindkeyboardheightchange="keyboardEvent"  wx:if='{{ showInput }}' focus="{{ focus }}" placeholder-class="holder-class" placeholder='说点什么吧...'  value="{{ inputVal }}" class="send-barrage" bindinput="bindInput"></input>
+
+  <cover-view wx:if='{{ showInput }}' class="send-btn" catchtap="sendTap">
+    发送
+  </cover-view>
 
   <cover-view wx:if='{{ showInput }}' class="send-btn" catchtap="sendTap">
     发送

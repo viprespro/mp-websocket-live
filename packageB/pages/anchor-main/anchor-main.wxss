@@ -245,35 +245,36 @@ live-player {
 .outer .barrage .barrage-item  .item-wrap .avatar {
   width: 46rpx;
   height: 46rpx;
-  vertical-align: top;
   display: inline-block;
   margin-right: 4rpx;
   border-radius: 50%;
+  vertical-align: middle;
 }
 
 .outer .barrage .barrage-item  .item-wrap .item-nickname {
+  position: relative;
   max-width: 220rpx;
   overflow: hidden;
-  line-height: 46rpx;
   display: inline-block;
   text-overflow: ellipsis;
   white-space: nowrap;
+  vertical-align: middle;
 }
 
 .outer .barrage .barrage-item  .item-wrap .item-words {
   display: inline-block;
-  line-height: 46rpx;
   margin-left: 15rpx;
   word-break: break-all;
   white-space: nowrap;
   color: #fff;
   font-size: 26rpx;
   overflow-x: scroll;
+  vertical-align: middle;
 }
 
 .send-barrage {
-  z-index: 9999;
-  position: fixed;
+  z-index: 99999;
+  position: absolute;
   left: 0;
   bottom: 0;
   height: 50px;

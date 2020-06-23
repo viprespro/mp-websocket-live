@@ -8,6 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    platform: app.globalData.userSystem,
     windowW: app.globalData.windowW,
     fullScreenHeight: app.globalData.screenH,
     headerH: app.globalData.CustomBar,
@@ -118,20 +119,21 @@ Page({
     }
 
     app.sendMessage(inputVal)
-    this.setData({ inputVal: '' })
+    this.setData({ inputVal: '', showInput: false, fullScreenHeight: app.globalData.screenH })
   },
 
   handleInteractionTap() {
     let data = this.data
-    let temp;
-    if (!data.showInput) {
-      temp = data.fullScreenHeight - 50
-    } else {
-      temp = app.globalData.screenH
-    }
+    // let temp;
+    // if (!data.showInput) {
+    //   temp = data.fullScreenHeight - 50
+    // } else {
+    //   temp = app.globalData.screenH
+    // }
     this.setData({
-      showInput: !this.data.showInput,
-      fullScreenHeight: temp,
+      // showInput: !this.data.showInput,
+      // fullScreenHeight: temp,
+      showInput: true,
       focus: true
     })
   },

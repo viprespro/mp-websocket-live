@@ -6,7 +6,8 @@ App({
     // 针对自定义头部添加
     wx.getSystemInfo({
       success: e => {
-        console.log(e)
+        // console.log(e)
+        this.globalData.userSystem = e.platform
         this.globalData.windowW = e.windowWidth
         this.globalData.windowH = e.windowHeight
         this.globalData.screenH = e.screenHeight; // 手机屏幕总高度
@@ -232,6 +233,7 @@ App({
    * 全局变量定义
    */
   globalData: {
+    userSystem: '',
     userInfo: null,
     bind_phone: '', //绑定过的手机号
     invite_code: '', // 邀请码
