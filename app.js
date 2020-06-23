@@ -1,12 +1,12 @@
 const api = require('/utils/api-tp.js');
 App({
   onLaunch: function(option) {
-    // console.log(option)
+    console.log(option)
     const that = this
     // 针对自定义头部添加
     wx.getSystemInfo({
       success: e => {
-        // console.log(e)
+        console.log(e)
         this.globalData.windowW = e.windowWidth
         this.globalData.windowH = e.windowHeight
         this.globalData.screenH = e.screenHeight; // 手机屏幕总高度
