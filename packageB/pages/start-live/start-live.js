@@ -34,6 +34,7 @@ Page({
     extra: '', // 附带选择
     selectedLength: 0, // 选择的个数
     ids:null , // 子页携带所有选中的的商品ids
+    category_id: null, // 子页传递过来的分类id
   },
 
   /**
@@ -311,7 +312,8 @@ Page({
       let obj = {
         name: data.live_name,
         cover: data.cover,
-        ids: data.ids
+        ids: data.ids,
+        category_id: data.category_id
       }
       console.log(obj)
       wx.redirectTo({

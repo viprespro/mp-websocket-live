@@ -8,12 +8,13 @@ Page({
   data: {
     statusH: app.globalData.StatusBar,
     navHeight: app.globalData.CustomBar,
-    category_id: 0,
+    category_id: '',
     keywords: '',
     cateList: [],
     goodsList: [],
     goods_ids:'' , // 所有已经选中的商品id集合
     showDefault: false,
+    category_name: '' // 默认为空的
   },
 
   /**
@@ -24,12 +25,12 @@ Page({
   },
 
   init() {
-    this.loadData()
+    this.load()
   },
 
   // 确认选择
   confirmChoose() {
-    let { goodsList } = this.data
+    let { goodsList, category_id } = this.data
     let checked = this.hasChosen()
     let firstCateId 
     if(checked.length) {
@@ -51,7 +52,8 @@ Page({
     var prevPage = pages[pages.length - 2]; //上一个页面
     //直接调用上一个页面的setData()方法，把数据存到上一个页面中去
     prevPage.setData({
-      ids: this.data.goods_ids
+      ids: this.data.goods_ids,
+      category_id
     })
     wx.navigateBack({
       delta: 1
@@ -144,6 +146,42 @@ Page({
   },
 
   // 获取页面数据
+  load() {
+    wx.showLoading({
+      title: '加载中...',
+    })
+    let { keywords, category_id } = this.data
+    let token = wx.getStorageSync('token')
+    let data = {
+      token,
+      category_id,
+      keywords
+    }
+    if (keywords == '') {
+      Reflect.deleteProperty(data, 'keywords')
+    }
+    if (!category_id) {
+      Reflect.deleteProperty(data, 'category_id')
+    }
+    api.get({
+      url: '/wxsmall/Live/getLiveGoodsList',
+      data,
+      success: res => {
+        console.log(res)
+        res = res.data
+        let arr = res.category_list
+        if(arr) {
+          // 设置分类并且设置默认类别
+          this.setData({cateList: arr,
+            category_id: arr[0].id,
+            category_name: arr[0].name 
+          })
+        }
+        this.loadData()
+      }
+    })
+  },
+
   loadData() {
     wx.showLoading({
       title: '加载中...',
@@ -155,10 +193,10 @@ Page({
       category_id,
       keywords
     }
-    if(keywords == '') {
+    if (keywords == '') {
       Reflect.deleteProperty(data, 'keywords')
     }
-    if(!category_id) {
+    if (!category_id) {
       Reflect.deleteProperty(data, 'category_id')
     }
     api.get({
@@ -167,17 +205,17 @@ Page({
       success: res => {
         console.log(res)
         res = res.data
-        if(!res.goods_list.length){
+        if (!res.goods_list.length) {
           this.setData({ showDefault: true })
-        }else {
+        } else {
           this.setData({ showDefault: false })
         }
-        if(!category_id) {
+        if (!category_id) {
           this.setData({
             cateList: res.category_list,
             goodsList: res.goods_list
           })
-        }else {
+        } else {
           this.setData({
             goodsList: res.goods_list
           })

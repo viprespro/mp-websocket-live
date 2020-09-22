@@ -75,11 +75,12 @@ Page({
     this.ctx = wx.createLivePusherContext('pusher')
     if (options.object) { // 开启直播传递古来直播间的名称和封面图
       let parse = JSON.parse(options.object)
-      let { name, cover, ids } = parse
+      let { name, cover, ids, category_id } = parse
       this.setData({
         live_name: name,
         cover,
         ids,
+        category_id
       })
       this.getPushInfo()
     }
@@ -202,6 +203,10 @@ Page({
   // 获取推流信息
   getPushInfo() {
     let data = this.data
+    console.log(wx.getStorageSync('token'))
+    console.log(data.live_name)
+    console.log(data.ids)
+    console.log(data.category_id)
     wx.uploadFile({
       url: Config.HTTP_REQUEST_URL + '/wxsmall/Live/push',
       filePath: data.cover,
@@ -214,6 +219,7 @@ Page({
         token: wx.getStorageSync('token'),
         title: data.live_name,
         goods_ids: data.ids,
+        live_category_id: data.category_id,
         v: 2, // 1 腾讯IM 2 websocket
       },
       success: function(res) {
