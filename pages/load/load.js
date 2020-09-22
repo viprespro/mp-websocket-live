@@ -74,6 +74,13 @@ Page({
                 success: (codeRes) => {
                   // console.log(codeRes)
                   let data = codeRes.data
+                  // 需要绑定手机号的情况
+                  if (data.code == 11) {
+                    wx.redirectTo({
+                      url: `/pages/bind/bind`,
+                    })
+                    return;
+                  }
                   if (data.code == 0) {
                     const { token, invite_code } = data.data
                     wx.setStorageSync('token', token)

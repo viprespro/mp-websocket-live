@@ -433,6 +433,7 @@ Page({
   },
 
   getOrderInfo: function() {
+    console.log(JSON.stringify(this.data.goods_data))
     let rep = this.data;
     api.post({
       url: '/wxsmall/Order/getGoodsInfo',

@@ -63,6 +63,13 @@
 					"pathName": "pages/live/live",
 					"query": "scene=522423_EGLS",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/bind/bind",
+					"pathName": "pages/bind/bind",
+					"query": "scene=522423_EGLS",
+					"scene": null
 				}
 			]
 		}

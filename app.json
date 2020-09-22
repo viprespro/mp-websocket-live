@@ -24,7 +24,8 @@
     "pages/agreement/agreement",
     "pages/user-agreement/index",
     "pages/search-live/index",
-    "pages/search-live-list/index"
+    "pages/search-live-list/index",
+    "pages/bind/bind"
   ],
   "window": {
     "navigationBarTextStyle": "white",

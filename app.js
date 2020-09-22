@@ -2,6 +2,13 @@ const api = require('/utils/api-tp.js');
 App({
   onLaunch: function(option) {
     console.log(option)
+
+    wx.login({
+      success: res=> {
+        console.log(res.code)
+      }
+    })
+
     const that = this
     // 针对自定义头部添加
     wx.getSystemInfo({

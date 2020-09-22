@@ -1,0 +1,45 @@
+.container {
+  width: 80%;
+  height: 600rpx;
+  margin: 300rpx auto;
+}
+
+
+.input-item {
+  position: relative;
+  padding: 15rpx 24rpx;
+  margin-top: 30rpx;
+  border-bottom: 1rpx solid #ddd;
+}
+
+.input-item > input {
+  max-width: 300rpx;
+}
+
+.btn {
+  width: 400rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  margin: 100rpx auto 0;
+  background: #ff605a;
+  text-align: center;
+  border-radius: 44rpx;
+  color: #fff;
+}
+
+ .code {
+  position: absolute;
+  right: 0;
+  height: 76rpx;
+  line-height: 76rpx;
+  background-color: #ff605a;
+  color: #fff;
+  text-align: center;
+  font-size: 28rpx;
+  margin: 0;
+  top: -10rpx;
+}
+
+.code::after {
+  border-radius: 0;
+}

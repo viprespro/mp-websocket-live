@@ -1,0 +1,21 @@
+<cu-custom bgColor="common-base-bg" isBack="{{false}}">
+  <view slot="content" class="common-title-color">绑定手机号</view>
+</cu-custom>
+
+
+<view class="container">
+
+  <view class="input-item">
+    <input placeholder="请输入手机号" bindinput="bindInput" maxlength="11"></input>
+  </view>
+
+  <view class="input-item">
+    <input placeholder='输入验证码' bindinput="bindCodeInput" maxlength="6"></input>
+    <button class='code' bindtap='getCode' disabled="{{flag}}">{{ time }}</button>
+  </view>
+
+  <view class="btn" bindtap="handleConfirm">确定</view>
+
+  <include src='/pages/back-home/home.wxml' />
+
+</view>

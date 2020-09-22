@@ -90,7 +90,7 @@ Page({
     })
     that = this;
     
-    // 设置屏幕常亮 兼容ios
+    // 设置屏幕常亮  
     wx.setKeepScreenOn({ keepScreenOn: true })
     // 设置屏幕亮度 0-1范围 当前设置为用户自己调节
     // wx.setScreenBrightness({ value: .6 })

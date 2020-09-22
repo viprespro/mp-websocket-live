@@ -30,7 +30,7 @@ Page({
                   invite_code: app.globalData.invite_code
                 },
                 success: (codeRes) => {
-                  // console.log(codeRes)
+                  console.log(codeRes)
                   let data = codeRes.data
                   if (data.code == 0) { 
                     let token = data.data.token
